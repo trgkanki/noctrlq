@@ -6,16 +6,22 @@
 # License: GNU AGPL, version 3 or later;
 # See http://www.gnu.org/licenses/agpl.html
 
-from aqt.editor import Editor
-from anki.hooks import wrap
+from aqt import mw
+from aqt.main import AnkiQt
 from aqt.utils import askUser
+from anki.hooks import wrap
 
-from .utils import openChangelog
+def newCloseEvent(self, event, *, _old):
+  if self.state == "profileManager":
+    return _old(self, event)
 
-def onLoadNote(self, focusTo=None):
-    pass
+  if askUser("Really close?"):
+    return _old(self, event)
+  else:
+    event.ignore()
 
 
-Editor.loadNote = wrap(Editor.loadNote, onLoadNote, "after")
+AnkiQt.closeEvent = wrap(AnkiQt.closeEvent, newCloseEvent, 'around')
 
-
+# mw.form.action** is inited on setupUI(), before any addon has been initialized.
+mw.form.actionExit.setShortcuts([])
