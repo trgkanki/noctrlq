@@ -1,5 +1,8 @@
-# Addon template
+# noctrlq
 
-[![Donate via patreon](https://img.shields.io/badge/patreon-donate-green.svg)](https://www.patreon.com/trgk)
+[![Donate via patreon](https://cdn.jsdelivr.net/gh/trgkanki/trgkanki-template-cli@develop/res/patreon_small.png)](https://www.patreon.com/trgk)
 
-This branch is a template for pure-python addon.
+- Disable `Ctrl+Q` for accidental quits.
+- Ask before quitting.
+
+![Example](docs/example.png)
