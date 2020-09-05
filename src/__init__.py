@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# addon_template v20.5.4i8
+# noctrlq v20.9.5i107
 #
 # Copyright: trgk (phu54321@naver.com)
 # License: GNU AGPL, version 3 or later;
